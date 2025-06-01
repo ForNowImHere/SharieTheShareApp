@@ -1,0 +1,28 @@
+{
+  "name": "font-upload",
+  "version": "1.0.0",
+  "description": "Upload fonts and serve them.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "18": "^0.0.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.3",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "fs": "^0.0.1-security",
+    "multer": "^1.4.4",
+    "path": "^0.12.7",
+    "sharp": "^0.33.5",
+    "zlib": "^1.0.5"
+  },
+  "engines": {
+    "node": "16.x"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

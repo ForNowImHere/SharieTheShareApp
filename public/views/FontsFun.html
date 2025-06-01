@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Upload System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Font Upload and Management</h1>
+    </header>
+
+    <section class="upload">
+        <h2>Upload a New Font</h2>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <label for="fontFile">Select a font file (.ttf or .otf):</label>
+            <input type="file" name="fontFile" id="fontFile" accept=".ttf,.otf" required><br><br>
+            <button type="submit">Upload Font</button>
+        </form>
+    </section>
+
+    <section class="font-list">
+        <h2>Uploaded Fonts</h2>
+        <ul id="fontList">
+            <!-- Font list will be dynamically populated here -->
+            <!-- Example:
+            <li>
+                FontName.ttf | Public | <button>Download</button> | <button>Set as Private</button> | <button>Delete</button>
+            </li>
+            -->
+        </ul>
+    </section>
+
+    <script>
+        // Fetch and display the list of fonts (public or private)
+        function fetchFonts() {
+            fetch('/')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('fontList').innerHTML = html;
+                })
+                .catch(err => console.error('Error fetching font list:', err));
+        }
+
+        // Call fetchFonts to load the list of fonts when the page loads
+        window.onload = fetchFonts;
+    </script>
+</body>
+</html>
